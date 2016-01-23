@@ -1,6 +1,10 @@
 # graphql-hotels-example
-GraphQL exapmple. Country/City/Hotel structure.
+GraphQL example. Country/City/Hotel structure.
 
+* To keep it simple this example uses in-memory storage. Initial data stored in [data.json](/storage/data.json) file.
+* It runs on node v4 and v5 without babel.
+* There is no frontend part, but it would be good to implement client using Relay.
+* [GraphiQL](https://github.com/graphql/graphiql) tool enabled and it is a way to play with GraphQL requests.
 
 ## How to run
 1. Install dependencies:
@@ -14,7 +18,7 @@ GraphQL exapmple. Country/City/Hotel structure.
 
 ## Requests examples
 
-Requests country by `id` with list of cities. [Open at localhost](http://localhost:3000/?query=query%20%7B%0A%20%20country(id%3A%20%222%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20cities%20%7B%0A%20%20%20%20%20%20name%2C%0A%20%20%20%20%20%20population%2C%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&variables=)
+Requests country by `id` with list of cities. [Open at localhost](http://localhost:3000/?query=query%20%7B%0A%20%20country(id%3A%20%221%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20cities%20%7B%0A%20%20%20%20%20%20name%2C%0A%20%20%20%20%20%20population%2C%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&variables=)
 ```graphql
 query {
   country(id: "1") {
