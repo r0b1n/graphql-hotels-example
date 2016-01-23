@@ -1,0 +1,18 @@
+{
+  "name": "graphql-hotels-example",
+  "version": "1.0.0",
+  "description": "GraphQL exapmple. Country/City/Hotel structure.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roman Vyakhirev <roman.vyakhirev@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel": "^6.3.26",
+    "express": "^4.13.4",
+    "express-graphql": "^0.4.5",
+    "graphql": "^0.4.14",
+    "lodash": "^4.0.0"
+  }
+}

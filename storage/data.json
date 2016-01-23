@@ -1,0 +1,162 @@
+{
+  "countries": [
+    {
+      "id": "1",
+      "name": "Australia",
+      "slug": "au",
+      "cities": [
+        {
+          "id": "11",
+          "name": "Brisbane",
+          "population": 2274460,
+          "hotels": [
+            {
+              "id": "111",
+              "name": "The Capitol Apartments",
+              "stars": 4,
+              "address": "35 Peel St, South Brisbane, South Brisbane, 4101 Brisbane, Australia"
+            },
+            {
+              "id": "112",
+              "name": "South Central",
+              "stars": 4,
+              "address": "43 Peel Street, South Brisbane, 4101 Brisbane, Australia"
+            },
+            {
+              "id": "113",
+              "name": "Arena Apartments",
+              "stars": 4,
+              "address": "9 Edmondstone Street, South Brisbane, 4101 Brisbane, Australia"
+            }
+          ]
+        },
+        {
+          "id": "12",
+          "name": "Sydney",
+          "population": 4840628,
+          "hotels": [
+            {
+              "id": "121",
+              "name": "Meriton Serviced Apartments Kent Street",
+              "stars": 5,
+              "address": "528 Kent Street, Sydney CBD, 2000 Sydney, Australia"
+            },
+            {
+              "id": "122",
+              "name": "Macleay Hotel",
+              "stars": 4,
+              "address": "28 Macleay Street, Potts Point, Potts Point, 2011 Sydney, Australia"
+            },
+            {
+              "id": "123",
+              "name": "Hotel Challis",
+              "stars": 3,
+              "address": "21-23 Challis Avenue, Potts Point, Potts Point, 2011 Sydney, Australia"
+            }
+          ]
+        },
+        {
+          "id": "13",
+          "name": "Melbourne",
+          "population": 4440328,
+          "hotels": [
+            {
+              "id": "131",
+              "stars": 4,
+              "name": "Cosmopolitan Hotel Melbourne",
+              "address": "2 - 8 Carlisle Street, 3182 Melbourne, Australia"
+            },
+            {
+              "id": "132",
+              "stars": 4,
+              "name": "Grand Hyatt Melbourne",
+              "address": "123 Collins Street, Melbourne CBD, 3000 Melbourne, Australia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Canada",
+      "slug": "ca",
+      "cities": [
+        {
+          "id": "21",
+          "name": "Toronto",
+          "population": 2615060,
+          "hotels": [
+            {
+              "id": "211",
+              "stars": 4,
+              "name": "One King West Hotel and Residence",
+              "address": "1 King Street West, M5H 1A1 Toronto, Canada"
+            },
+            {
+              "id": "212",
+              "stars": 3,
+              "name": "The Strathcona Hotel",
+              "address": "60 York Street, M5J 1S8 Toronto, Canada"
+            },
+            {
+              "id": "213",
+              "stars": 4,
+              "name": "Grand Hotel & Suites",
+              "address": "225 Jarvis Street, M5B 2C1 Toronto, Canada"
+            },
+            {
+              "id": "214",
+              "stars": 4,
+              "name": "The Westin Harbour Castle Toronto",
+              "address": "1 Harbour Square, M5J 1A6 Toronto, Canada"
+            }
+          ]
+        },
+        {
+          "id": "22",
+          "name": "Montreal",
+          "population": 1620693,
+          "hotels": [
+            {
+              "id": "221",
+              "stars": 4,
+              "name": "Hotel Bonaventure Montreal",
+              "address": "900 de La Gauchetiere West, H5A 1E4 Montréal, Canada"
+            },
+            {
+              "id": "222",
+              "stars": 4,
+              "name": "InterContinental Montreal",
+              "address": "360 Saint-Antoine Street Ouest, H2Y 3X4 Montréal, Canada"
+            },
+            {
+              "id": "223",
+              "stars": 3,
+              "name": "Hotel Travelodge Montreal Centre",
+              "address": "50 Boul Rene Levesque Ouest, H2Z 1A2 Montréal, Canada"
+            }
+          ]
+        },
+        {
+          "id": "23",
+          "name": "Ottawa",
+          "population": 812129,
+          "hotels": [
+            {
+              "id": "221",
+              "stars": 3,
+              "name": "Les Suites Hotel",
+              "address": "130 Besserer Street, K1N 9M9 Ottawa, Canada"
+            },
+            {
+              "id": "222",
+              "stars": 4,
+              "name": "Novotel Ottawa",
+              "address": "33 Nicholas Street, K1N 9M7 Ottawa, Canada"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
