@@ -127,10 +127,12 @@ var hotelType = new types.GraphQLObjectType({
 module.exports = new types.GraphQLSchema({
   query: new types.GraphQLObjectType({
     name: 'RootQueryType',
+    description: "Root of all queries",
 
     // all fields will be available from root query
     // Like: `query { country (id: '10') { name }}`, etc.
     fields: {
+
       country: {
         type: countryType,
         args: {
@@ -151,6 +153,15 @@ module.exports = new types.GraphQLSchema({
 
           // simple function returns needed data.
           return storage.getCountry(params);
+        }
+      },
+
+      countries: {
+        type: new types.GraphQLList(countryType),
+        description: "The list of Countries",
+        resolve: function (root, params, source, fieldASTs) {
+          // TODO: add sort/filter
+          return storage.getCountries();
         }
       },
 

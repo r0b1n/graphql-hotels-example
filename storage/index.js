@@ -35,6 +35,16 @@ module.exports = {
   },
 
   /**
+   * Returns all countries
+   * TODO: add sorting/filtering
+   *
+   * @return {[Object]}
+   */
+  getCountries: function () {
+    return countriesHash;
+  },
+
+  /**
    * Returns City by params hash {field: value}
    * @param {Object} values - params for search {field: value}
    * @return {Object}
