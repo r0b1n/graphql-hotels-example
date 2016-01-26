@@ -1,9 +1,37 @@
 var types = require('graphql/type');
 
+var relay = require('graphql-relay');
+
+//import {
+//  connectionArgs,
+//  connectionDefinitions,
+//  connectionFromArray,
+//  fromGlobalId,
+//  globalIdField,
+//  mutationWithClientMutationId,
+//  nodeDefinitions,
+//} from 'graphql-relay';
+
 var storage = require('../storage');
 
 
 // === GraphQL Types ===
+var node = relay.nodeDefinitions(
+  (globalId) => {
+    var global = relay.fromGlobalId(globalId);
+    if (global.type === 'Faction') {
+      return getFaction(global.id);
+    } else if (global.type === 'Ship') {
+      return getShip(global.id);
+    } else {
+      return null;
+    }
+  },
+  (obj) => {
+    return obj.ships ? factionType : shipType;
+  }
+);
+
 // Declaring types here in one file because they have circular dependencies.
 
 // <editor-fold desc="countryType" defaultState="collapsed">
@@ -15,10 +43,7 @@ var countryType = new types.GraphQLObjectType({
   // descriptions are needed for introspection.
   fields: function () {
     return {
-      id: {
-        type: new types.GraphQLNonNull(types.GraphQLString),
-        description: 'The id of the country.',
-      },
+      id: relay.globalIdField('Country'),
       name: {
         type: types.GraphQLString,
         description: 'The name of the country.',
@@ -33,9 +58,23 @@ var countryType = new types.GraphQLObjectType({
         resolve: (country, params, source, fieldASTs) => {
           return country.cities;
         },
+      },
+      citiesList: {
+        type: cityConnection.connectionType,
+        description: 'The cities on the country under list.',
+        args: relay.connectionArgs,
+        resolve: (country, args) => {
+          console.log(country);
+          console.log(args);
+          return relay.connectionFromArray(
+            country.cities.map((id) => storage.getCity(id)),
+            args
+          );
+        }
       }
     };
   },
+  interfaces: [node.nodeInterface],
 });
 // </editor-fold>
 // <editor-fold desc="cityType" defaultState="collapsed">
@@ -47,10 +86,7 @@ var cityType = new types.GraphQLObjectType({
   // descriptions are needed for introspection.
   fields: function () {
     return {
-      id: {
-        type: new types.GraphQLNonNull(types.GraphQLString),
-        description: 'City ID',
-      },
+      id: relay.globalIdField('City'),
       name: {
         type: types.GraphQLString,
         description: 'City name.',
@@ -81,6 +117,7 @@ var cityType = new types.GraphQLObjectType({
       }
     };
   },
+  interfaces: [node.nodeInterface],
 });
 // </editor-fold>
 // <editor-fold desc="hotelType" defaultState="collapsed">
@@ -92,10 +129,7 @@ var hotelType = new types.GraphQLObjectType({
   // descriptions are needed for introspection.
   fields: function () {
     return {
-      id: {
-        type: new types.GraphQLNonNull(types.GraphQLString),
-        description: 'City ID',
-      },
+      id: relay.globalIdField('Hotel'),
       name: {
         type: types.GraphQLString,
         description: 'City name.',
@@ -117,8 +151,13 @@ var hotelType = new types.GraphQLObjectType({
       }
     };
   },
+  interfaces: [node.nodeInterface],
 });
 // </editor-fold>
+
+
+var cityConnection = relay.connectionDefinitions({name: 'City', nodeType: cityType});
+console.log(cityConnection);
 
 // === End GraphQL Types ===
 
