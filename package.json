@@ -5,15 +5,16 @@
   "description": "GraphQL exapmple. Country/City/Hotel structure.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-schema": "node ./scripts/update-schema.js"
   },
   "author": "Roman Vyakhirev <roman.vyakhirev@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.13.4",
-    "express-graphql": "^0.4.5",
-    "graphql": "^0.4.14",
-    "graphql-relay": "^0.3.6",
+    "express-graphql": "^0.5.3",
+    "graphql": "^0.6.0",
+    "graphql-relay": "^0.4.1",
     "lodash": "^4.0.0"
   }
 }
