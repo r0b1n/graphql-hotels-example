@@ -1,0 +1,68 @@
+schema {
+  query: Query
+}
+
+type City implements Node {
+  id: ID!
+  name: String
+  population: Int
+  hotelsCount: Int
+  images: [Image]
+  country: Country
+  hotels: [Hotel]
+}
+
+type CityConnection {
+  pageInfo: PageInfo!
+  edges: [CityEdge]
+}
+
+type CityEdge {
+  node: City
+  cursor: String!
+}
+
+type Country implements Node {
+  id: ID!
+  _id: String
+  name: String
+  slug: String
+  coverImageUrl: String
+  cities: [City]
+  citiesList(after: String, first: Int, before: String, last: Int): CityConnection
+}
+
+type Hotel implements Node {
+  id: ID!
+  name: String
+  address: String
+  stars: Int
+  city: City
+}
+
+type Image implements Node {
+  id: ID!
+  url: String
+}
+
+interface Node {
+  id: ID!
+}
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+  endCursor: String
+}
+
+type Query {
+  viewer: ViewerQueryType
+}
+
+type ViewerQueryType {
+  country(id: String!): Country
+  countries: [Country]
+  city(id: String!): City
+  hotel(id: String!): Hotel
+}

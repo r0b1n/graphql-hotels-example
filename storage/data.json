@@ -4,11 +4,17 @@
       "id": "1",
       "name": "Australia",
       "slug": "au",
+      "coverImageUrl": "/i/australia.jpg", 
       "cities": [
         {
           "id": "11",
           "name": "Brisbane",
           "population": 2274460,
+          "images": [
+            "/i/brisbane/1.jpg",
+            "/i/brisbane/2.jpg",
+            "/i/brisbane/3.jpg"
+          ],
           "hotels": [
             {
               "id": "111",
@@ -34,6 +40,11 @@
           "id": "12",
           "name": "Sydney",
           "population": 4840628,
+          "images": [
+            "/i/sydney/1.jpg",
+            "/i/sydney/2.jpg",
+            "/i/sydney/3.jpg"
+          ],
           "hotels": [
             {
               "id": "121",
@@ -59,6 +70,11 @@
           "id": "13",
           "name": "Melbourne",
           "population": 4440328,
+          "images": [
+            "/i/melbourne/1.jpg",
+            "/i/melbourne/2.jpg",
+            "/i/melbourne/3.jpg"
+          ],
           "hotels": [
             {
               "id": "131",
@@ -80,11 +96,17 @@
       "id": "2",
       "name": "Canada",
       "slug": "ca",
+      "coverImageUrl": "/i/canada.jpg",
       "cities": [
         {
           "id": "21",
           "name": "Toronto",
           "population": 2615060,
+          "images": [
+            "/i/toronto/1.jpg",
+            "/i/toronto/2.jpg",
+            "/i/toronto/3.jpg"
+          ],
           "hotels": [
             {
               "id": "211",
@@ -116,6 +138,11 @@
           "id": "22",
           "name": "Montreal",
           "population": 1620693,
+          "images": [
+            "/i/montreal/1.jpg",
+            "/i/montreal/2.jpg",
+            "/i/montreal/3.jpg"
+          ],
           "hotels": [
             {
               "id": "221",
@@ -140,16 +167,21 @@
         {
           "id": "23",
           "name": "Ottawa",
+          "images": [
+            "/i/ottawa/1.jpg",
+            "/i/ottawa/2.jpg",
+            "/i/ottawa/3.jpg"
+          ],
           "population": 812129,
           "hotels": [
             {
-              "id": "221",
+              "id": "231",
               "stars": 3,
               "name": "Les Suites Hotel",
               "address": "130 Besserer Street, K1N 9M9 Ottawa, Canada"
             },
             {
-              "id": "222",
+              "id": "232",
               "stars": 4,
               "name": "Novotel Ottawa",
               "address": "33 Nicholas Street, K1N 9M7 Ottawa, Canada"
