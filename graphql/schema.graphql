@@ -4,6 +4,7 @@ schema {
 
 type City implements Node {
   id: ID!
+  _id: String
   name: String
   population: Int
   hotelsCount: Int

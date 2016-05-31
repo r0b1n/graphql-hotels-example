@@ -114,6 +114,13 @@ var cityType = new types.GraphQLObjectType({
   fields: function () {
     return {
       id: relay.globalIdField('City'),
+      _id: {
+        type: types.GraphQLString,
+        description: "City id",
+        resolve: (data) => {
+          return data.id;
+        }
+      },
       name: {
         type: types.GraphQLString,
         description: 'City name.',

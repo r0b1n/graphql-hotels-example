@@ -378,6 +378,18 @@
               "deprecationReason": null
             },
             {
+              "name": "_id",
+              "description": "City id",
+              "args": [],
+              "type": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              },
+              "isDeprecated": false,
+              "deprecationReason": null
+            },
+            {
               "name": "name",
               "description": "City name.",
               "args": [],
