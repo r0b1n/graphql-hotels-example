@@ -6,6 +6,9 @@ GraphQL example. Country/City/Hotel structure.
 * There is no frontend part, but it would be good to implement client using Relay.
 * [GraphiQL](https://github.com/graphql/graphiql) tool enabled and it is a way to play with GraphQL requests.
 
+## Relations Diagram
+![relations diagram](diagram.png)
+
 ## How to run
 1. Install dependencies:
 ```npm install```
