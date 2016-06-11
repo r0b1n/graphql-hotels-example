@@ -3,6 +3,7 @@
     {
       "id": "1",
       "name": "Australia",
+      "description": "Australia is a country in the southern hemisphere between the Pacific Ocean and the Indian Ocean. Its official name is the Commonwealth of Australia. Australia is the sixth biggest country in the world by landmass, and is part of the Oceanic and Australasian regions. The Australian emblem is a flower called the Golden Wattle.",
       "slug": "au",
       "coverImageUrl": "/i/australia.jpg", 
       "cities": [
@@ -95,6 +96,7 @@
     {
       "id": "2",
       "name": "Canada",
+      "description": "Canada is a country in the northern part of North America. It is bordered by Denmark (Greenland), the United States of America both to the south and to the west (Alaska). By area, Canada is the second largest country in the world. Canada consists of ten provinces and three territories. Ottawa is the capital of Canada.[7] Canada became a country in 1867, but only got its constitution back from the United Kingdom in 1982. It used to be called the Dominion of Canada.",
       "slug": "ca",
       "coverImageUrl": "/i/canada.jpg",
       "cities": [
