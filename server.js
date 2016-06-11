@@ -8,11 +8,12 @@ var schema = require('./graphql/schema');
 var app = express();
 
 // GraphQL entry point
-app.use('/', graphqlHTTP({
+app.use('/graphql', graphqlHTTP({
   schema: schema,
   graphiql: true,
 }));
 
+app.use(express.static('.'));
 
 app.listen(3000, function () {
   console.log("\n* * * * * * * * * * * * * * * * * *");
