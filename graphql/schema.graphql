@@ -27,6 +27,7 @@ type Country implements Node {
   id: ID!
   _id: String
   name: String
+  description: String
   slug: String
   coverImageUrl: String
   cities: [City]
@@ -59,6 +60,7 @@ type PageInfo {
 
 type Query {
   viewer: ViewerQueryType
+  node(id: ID!): Node
 }
 
 type ViewerQueryType {

@@ -19,16 +19,28 @@ var storage = require('../storage');
 var node = relay.nodeDefinitions(
   (globalId) => {
     var global = relay.fromGlobalId(globalId);
-    if (global.type === 'Faction') {
-      return getFaction(global.id);
-    } else if (global.type === 'Ship') {
-      return getShip(global.id);
-    } else {
-      return null;
+    switch (global.type) {
+      case 'Country':
+        return storage.getCountry({id: global.id});
+      case 'City':
+        return storage.getCity({id: global.id});
+      case 'Hotel':
+        return storage.getHotel({id: global.id});
+      default:
+        return null;
     }
   },
   (obj) => {
-    return obj.ships ? factionType : shipType;
+    if (obj.description) {
+      return countryType;
+    }
+    if (obj.population) {
+      return cityType;
+    }
+    if (obj.stars) {
+      return hotelType;
+    }
+    return imageType;
   }
 );
 
@@ -71,6 +83,10 @@ var countryType = new types.GraphQLObjectType({
         type: types.GraphQLString,
         description: 'The name of the country.',
       },
+      description: {
+        type: types.GraphQLString,
+        description: 'The description of the country.',
+      },
       slug: {
         type: types.GraphQLString,
         description: "Country slug",
@@ -94,7 +110,7 @@ var countryType = new types.GraphQLObjectType({
           console.log(country);
           console.log(args);
           return relay.connectionFromArray(
-            country.cities.map((id) => storage.getCity(id)),
+            country.cities.map((id) => storage.getCity({id})),
             args
           );
         }
@@ -281,6 +297,7 @@ module.exports = new types.GraphQLSchema({
       type: userType,
       resolve: () => {return {}},
     },
+    node: node.nodeField,
   }),
 }),
 });
