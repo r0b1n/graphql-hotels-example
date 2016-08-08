@@ -44,7 +44,7 @@ For more information [check this](http://graphql.org/blog/#bonus-round-a-truly-r
 But in this example I am going to leave all the entry points available.
 
 ## How to run
-Needs corrections!
+
 1. Install dependencies:
 ```npm install```
 
@@ -52,38 +52,5 @@ Needs corrections!
 2. Run the server
 ```npm start```
 
-3. Go to [http://localhost:3000/graphql](http://localhost:3000/graphql?query=query%20%7B%0A%20%20country(id%3A%20%222%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20cities%20%7B%0A%20%20%20%20%20%20name%2C%0A%20%20%20%20%20%20hotelsCount%2C%0A%20%20%20%20%20%20population%2C%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D%0A%0A&variables=) to open [GraphiQL](https://github.com/graphql/graphiql). 
+3. Go to [http://localhost:3000/graphql](http://localhost:3000/graphql?query=query%20%7B%0A%20%20viewer%7B%0A%20%20%20%20country(id%3A%20%221%22)%20%7B%0A%20%20%20%20%20%20name%0A%20%20%20%20%20%20cities%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20hotelsCount%0A%20%20%20%20%20%20%20%20population%0A%20%20%20%20%20%20%7D%0A%20%20%09%7D%0A%20%20%7D%0A%7D%0A%0A) to open [GraphiQL](https://github.com/graphql/graphiql). 
 
-## Requests examples
-Needs corrections! Move this to some step-by-step tutorial/blogposts. 
-
-Requests country by `id` with list of cities. [Open at localhost](http://localhost:3000/graphql?query=query%20%7B%0A%20%20country(id%3A%20%221%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20cities%20%7B%0A%20%20%20%20%20%20name%2C%0A%20%20%20%20%20%20population%2C%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&variables=)
-```graphql
-query {
-  country(id: "1") {
-    name
-    cities {
-      name,
-      population,
-    }
-  }
-}
-```
-
-Request country by `id` with list of cities and list of hotels in each. [Open at localhost](http://localhost:3000/graphql?query=query%20%7B%0A%20%20country(id%3A%20%222%22)%20%7B%0A%20%20%20%20name%0A%20%20%20%20cities%20%7B%0A%20%20%20%20%20%20name%2C%0A%20%20%20%20%20%20hotelsCount%2C%0A%20%20%20%20%20%20population%2C%0A%20%20%20%20%20%20hotels%20%7B%0A%20%20%20%20%20%20%20%20name%0A%20%20%20%20%20%20%20%20stars%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%7D%0A%7D&variables=)
-```graphql
-query {
-  country(id: "2") {
-    name
-    cities {
-      name,
-      hotelsCount,
-      population,
-      hotels {
-        name
-        stars
-      }
-    }
-  }
-}
-```
